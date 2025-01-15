@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+# Función que calcula la medición calibrada
+def medicion_calibrada(medicion_crudo, factor_ajuste=1.2, desplazamiento=5):
+    return factor_ajuste * medicion_crudo + desplazamiento
+
+# Simulación para diferentes mediciones en crudo
+mediciones_crudo = range(10, 101, 10)  # Mediciones de 10 a 100 con incrementos de 10
+mediciones_calibradas = [medicion_calibrada(r) for r in mediciones_crudo]
+
+# Imprimir resultados
+for crudo, calibrada in zip(mediciones_crudo, mediciones_calibradas):
+    print(f"Medición en crudo: {crudo} -> Medición calibrada: {calibrada:.2f}")
+
+# Graficar
+plt.plot(mediciones_crudo, mediciones_calibradas, marker='o', color='orange')
+plt.title('Medición calibrada vs Medición en crudo')
+plt.xlabel('Medición en crudo')
+plt.ylabel('Medición calibrada')
+plt.grid()
+plt.show()

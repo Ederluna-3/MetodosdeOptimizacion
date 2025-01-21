@@ -146,3 +146,11 @@ if st.button("Resolver el sistema"):
             st.success(f"Soluciones por Cramer: {resultado}")
             st.subheader("Pasos de la resolución por Cramer:")
             st.write("\n".join(pasos_cramer))
+st.markdown(
+    """
+    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 10px; color: gray;">
+        <small>Ederluna</small>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
